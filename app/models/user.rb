@@ -6,6 +6,13 @@ class User < ApplicationRecord
   validates :username, :email, :password_hash, :password_salt, presence: true
   validates :email, uniqueness: true
 
+  def self.authenticate(email, password)
+    user = find_by_email(email)
+    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+      user
+    end
+  end
+
   private
   def encrypt_password
     if password.present?
