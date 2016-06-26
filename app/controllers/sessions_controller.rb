@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
-      flash[:notice] = "Logged In as #{user.username}"
       redirect_to dashboard_path
     else
       flash.now[:notice] = "Invalid username or password"
