@@ -4,18 +4,18 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create(user_params)
-    if user.save
+    @user = User.new(user_params)
+    if @user.save
       flash.notice = "User successfully created"
-      redirect_to :dashboard_path
+      redirect_to dashboard_path
     else
-      flash.now.notice = "User could not be created"
-      render :new
+      flash.notice = "User could not be created"
+      redirect_to action: :new
     end
   end
 
   private
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 end
