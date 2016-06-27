@@ -1,24 +1,9 @@
-# README
+# Simple Auth
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: 2.2.3p173
 
-Things you may want to cover:
+* Rails version: 5.0.0.rc2
 
-* Ruby version
+* Gems: Rspec-Rails, Capybara, BCrypt.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Built as an exercise to better understand user management and polymorphic associations (WIP) in rails.
