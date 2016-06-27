@@ -30,5 +30,11 @@ describe "Feature: User management" do
       sign_up
       expect(page).to have_content "Logged in as TestUser"
     end
+
+    it "can log out and in again" do
+      sign_up
+      click_link "Log out"
+      expect(page).to have_content "Logged Out"
+    end
   end
 end
